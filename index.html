@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>XXXX Unisex Salon | Luxury Beauty & Grooming</title>
+  <meta name="description" content="Experience premium hair, makeup, skin & grooming services for men & women at XXXX Unisex Salon. World-class luxury, international standard beauty experts." />
+  <meta name="keywords" content="Luxury Salon, Premium Hair Salon, Top Bridal Makeup, Premium Grooming Men, XXXX Unisex Salon" />
+  <meta name="author" content="XXXX Unisex Salon" />
+  
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="XXXX Unisex Salon | Luxury Beauty & Grooming" />
+  <meta property="og:description" content="Experience premium hair, makeup, skin & grooming services for men & women at XXXX Unisex Salon. World-class luxury beauty experts." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&q=80&w=1200" />
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✨</text></svg>" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HairSalon",
+    "name": "XXXX Unisex Salon",
+    "image": "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&q=80&w=1200",
+    "@id": "https://xxxxsalon.com",
+    "url": "https://xxxxsalon.com",
+    "telephone": "+91XXXXXXXXXX",
+    "priceRange": "$$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "XXXXX",
+      "addressLocality": "XXXXX",
+      "postalCode": "XXXXXX",
+      "addressCountry": "IN"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "09:00",
+      "closes": "21:00"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "268"
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- Particle Canvas Background -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- Premium Preloader -->
+  <div id="preloader">
+    <div class="preloader-glow"></div>
+    <div class="preloader-content">
+      <div class="preloader-logo">
+        <span class="preloader-sub">XXXX • XXXX</span>
+        <h1>XXXX</h1>
+        <div class="preloader-line"></div>
+        <span class="preloader-tag">Unisex Salon</span>
+      </div>
+      <div class="preloader-bar">
+        <div class="preloader-progress" id="preloaderProgress"></div>
+      </div>
+      <div class="preloader-details">
+        <span>Curating Premium Experience</span>
+        <span class="preloader-percent" id="preloaderPercent">0%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast">
+    <div class="toast-icon">
+      <i class="fa-solid fa-sparkles"></i>
+    </div>
+    <div class="toast-text">
+      <div class="toast-title">Action Simulated</div>
+      <p class="toast-message" id="toastMessage">Direct call feature is currently disabled in this template.</p>
+    </div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header class="header" id="header">
+    <div class="container nav-container">
+      <a href="#home" class="logo" data-nav="home">
+        <div class="logo-title">
+          <span>XXXX</span>
+          <span class="logo-dot"></span>
+        </div>
+        <span class="logo-sub">Unisex Salon • XXXX</span>
+      </a>
+
+      <nav class="nav-desktop" id="navDesktop">
+        <a href="#home" class="nav-link active" data-nav="home">Home</a>
+        <a href="#services" class="nav-link" data-nav="services">Services</a>
+        <a href="#about" class="nav-link" data-nav="about">About</a>
+        <a href="#gallery" class="nav-link" data-nav="gallery">Gallery</a>
+        <a href="#reviews" class="nav-link" data-nav="reviews">Reviews</a>
+        <a href="#why-us" class="nav-link" data-nav="why-us">Why Us</a>
+        <a href="#contact" class="nav-link" data-nav="contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#" class="phone-link" id="phoneLink">
+          <i class="fa-solid fa-phone"></i>
+          <span>+91 XXXXX XXXXX</span>
+        </a>
+        <button class="btn-book" id="bookBtnNav">Book Appointment</button>
+      </div>
+
+      <div class="mobile-actions">
+        <button class="btn-book-mobile" id="bookBtnMobile">Book</button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" id="mobileDrawer">
+      <div class="mobile-drawer-content">
+        <a href="#home" class="mobile-link active" data-nav="home">Home</a>
+        <a href="#services" class="mobile-link" data-nav="services">Services</a>
+        <a href="#about" class="mobile-link" data-nav="about">About</a>
+        <a href="#gallery" class="mobile-link" data-nav="gallery">Gallery</a>
+        <a href="#reviews" class="mobile-link" data-nav="reviews">Reviews</a>
+        <a href="#why-us" class="mobile-link" data-nav="why-us">Why Us</a>
+        <a href="#contact" class="mobile-link" data-nav="contact">Contact</a>
+        <div class="mobile-drawer-actions">
+          <a href="#" class="mobile-call" id="phoneLinkMobile">
+            <i class="fa-solid fa-phone"></i>
+            <span>Call: +91 XXXXX XXXXX</span>
+          </a>
+          <button class="btn-book-mobile-full" id="bookBtnMobileFull">Book Premium Experience</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section id="home" class="hero">
+      <div class="hero-bg" id="heroBg"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-glow"></div>
+      
+      <div class="container hero-content">
+        <div class="hero-tag">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>XXXX, XXXX • Premium Destination</span>
+        </div>
+        
+        <h1 class="hero-title">
+          Luxury Beauty & <br/>
+          <span class="gradient-text">Grooming Experience</span> <br/>
+          in XXXX
+        </h1>
+        
+        <p class="hero-subtitle">
+          Premium Hair, Makeup, Skin & Grooming Services for Men & Women. Crafted by internationally trained master stylists.
+        </p>
+        
+        <div class="hero-cta">
+          <button class="btn-primary" id="heroBookBtn">
+            <i class="fa-regular fa-calendar"></i>
+            Book Appointment
+          </button>
+          <a href="#services" class="btn-glass">Explore Services</a>
+        </div>
+
+        <div class="hero-trust">
+          <div class="trust-badge">
+            <div class="trust-icon"><i class="fa-solid fa-star"></i></div>
+            <div>
+              <div class="trust-title">260+ REVIEWS <span class="gold">★</span></div>
+              <div class="trust-sub">4.9 Star Rating on Google</div>
+            </div>
+          </div>
+          <div class="trust-badge">
+            <div class="trust-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+            <div>
+              <div class="trust-title">PREMIUM SALON</div>
+              <div class="trust-sub">International Products</div>
+            </div>
+          </div>
+          <div class="trust-badge">
+            <div class="trust-icon"><i class="fa-regular fa-clock"></i></div>
+            <div>
+              <div class="trust-title">OPEN DAILY</div>
+              <div class="trust-sub">9:00 AM – 9:00 PM</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <a href="#services" class="scroll-down" aria-label="Scroll down">
+        <i class="fa-solid fa-chevron-down"></i>
+      </a>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">Signature Offerings</span>
+          <h2 class="section-title">Premium <span class="gradient-text italic">Services</span></h2>
+          <div class="section-divider"></div>
+          <p class="section-subtitle">Every service at XXXX is executed with peerless craftsmanship, uncompromising hygiene, and global benchmark luxury products.</p>
+        </div>
+
+        <div class="services-grid" id="servicesGrid">
+          <!-- Services will be injected by JS -->
+        </div>
+
+        <div class="banner-cta reveal">
+          <div class="banner-text">
+            <h4>Looking for a customized Bridal or Groom package?</h4>
+            <p>We provide private premium trial sessions and comprehensive pre-wedding wellness timelines.</p>
+          </div>
+          <button class="btn-outline" data-service="Bridal & Groom Custom Package">Request Consultation</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-images reveal">
+            <div class="about-glow"></div>
+            <div class="about-img-1">
+              <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=1000" alt="Salon Architecture" />
+            </div>
+            <div class="about-img-2">
+              <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&q=80&w=800" alt="Salon Environment" />
+            </div>
+            <div class="seal-circle">
+              <span>★ Premium ★</span>
+              <span>Finest Tier</span>
+            </div>
+          </div>
+
+          <div class="about-content reveal">
+            <span class="section-eyebrow">The XXXX Philosophy</span>
+            <h2 class="section-title">Redefining Luxury <br/><span class="gradient-text italic">Grooming & Beauty</span></h2>
+            <div class="section-divider left"></div>
+            
+            <p class="about-quote">"XXXX Unisex Salon is one of the premium grooming destinations offering luxury beauty experiences, advanced hair artistry, bridal makeovers, skincare treatments, and modern grooming services in a sophisticated environment."</p>
+            <p class="about-sub">Located conveniently at our primary hub, we have designed a sanctuary where international standards meet personalized hospitality. Every treatment begins with a precise consultation to guarantee flawless outcomes.</p>
+            
+            <div class="counter-grid">
+              <div class="counter-card" data-target="260" data-suffix="+">
+                <div class="counter-num">0+</div>
+                <div class="counter-label">Happy Reviews</div>
+              </div>
+              <div class="counter-card" data-target="7" data-suffix=" Days">
+                <div class="counter-num">0 Days</div>
+                <div class="counter-label">Open Every Week</div>
+              </div>
+              <div class="counter-card" data-target="100" data-suffix="%">
+                <div class="counter-num">0%</div>
+                <div class="counter-label">Premium Int. Products</div>
+              </div>
+              <div class="counter-card" data-target="3.5" data-suffix="k+" data-decimal="true">
+                <div class="counter-num">0k+</div>
+                <div class="counter-label">Happy Clients</div>
+              </div>
+            </div>
+            
+            <div class="about-signature">
+              <div class="signature-info">
+                <i class="fa-solid fa-shield-halved gold"></i>
+                <div>
+                  <div class="sig-title">Certified Master Stylists</div>
+                  <div class="sig-sub">Schwarzkopf Professional Partners</div>
+                </div>
+              </div>
+              <div class="signature-brand">
+                <div class="sig-brand-name">XXXX</div>
+                <div class="sig-brand-tier">Premium Tier</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section id="gallery" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">Visual Masterpieces</span>
+          <h2 class="section-title">Before & After <span class="gradient-text italic">Transformations</span></h2>
+          <div class="section-divider"></div>
+          <p class="section-subtitle">Witness the extraordinary artistry of our team. Slide to experience real transformations directly inspired by our elite clientele.</p>
+        </div>
+
+        <div class="slider-label reveal">
+          <i class="fa-solid fa-sliders gold"></i>
+          <span>Interactive Comparison — Drag Handle</span>
+        </div>
+
+        <div class="slider-container reveal" id="sliderContainer">
+          <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&q=80&w=1200" alt="After" class="slider-img slider-after" />
+          <div class="slider-label-after">After Treatment</div>
+          
+          <div class="slider-before-wrap" id="sliderBeforeWrap">
+            <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&q=80&w=1200" alt="Before" class="slider-img slider-before" />
+            <div class="slider-label-before">Before</div>
+          </div>
+          
+          <div class="slider-divider" id="sliderDivider" style="left: 50%;">
+            <div class="slider-handle">
+              <span></span><span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="filter-tabs reveal" id="filterTabs">
+          <!-- Tabs injected by JS -->
+        </div>
+
+        <div class="masonry-grid" id="masonryGrid">
+          <!-- Gallery items injected by JS -->
+        </div>
+
+        <div class="text-center reveal" style="margin-top: 4rem;">
+          <a href="#" class="btn-glass-pill" id="instagramLink">
+            <i class="fa-brands fa-instagram gold"></i>
+            <span>Follow our Daily Transformations on Social Channels</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS SECTION -->
+    <section id="reviews" class="section">
+      <div class="container">
+        <div class="reviews-glow"></div>
+        <div class="section-header reveal">
+          <span class="section-eyebrow">Uncompromising Trust</span>
+          <h2 class="section-title">Customer <span class="gradient-text italic">Experiences</span></h2>
+          <div class="section-divider"></div>
+          <p class="section-subtitle">Real reviews inspired by our 260+ highly satisfied clients who experience our unparalleled devotion to luxury beauty.</p>
+        </div>
+
+        <div class="reviews-grid" id="reviewsGrid">
+          <!-- Reviews injected by JS -->
+        </div>
+
+        <div class="rating-summary reveal">
+          <div class="rating-line"><span>Google Overall Rating:</span> <strong>4.9 / 5.0</strong></div>
+          <div class="dot-sep"></div>
+          <div class="rating-line">Based on <span class="gold">260+ Verified Customer Ratings</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY US SECTION -->
+    <section id="why-us" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">The International Benchmark</span>
+          <h2 class="section-title">Why Choose <span class="gradient-text italic">XXXX</span></h2>
+          <div class="section-divider"></div>
+          <p class="section-subtitle">We transcend standard models by operating under an unyielding manifesto of luxury, authentic product integrity, and pristine environment.</p>
+        </div>
+
+        <div class="why-grid" id="whyGrid">
+          <!-- Why us items injected by JS -->
+        </div>
+
+        <div class="brands-banner reveal">
+          <div class="brand-item">
+            <span class="brand-name">Schwarzkopf</span>
+            <span class="dot-sep-line"></span>
+            <span class="brand-tag">Professional Partner</span>
+          </div>
+          <div class="brand-item">
+            <span class="brand-name">L'Oréal</span>
+            <span class="dot-sep-line"></span>
+            <span class="brand-tag">Keratin & Colour</span>
+          </div>
+          <div class="brand-item">
+            <span class="brand-name">O3+</span>
+            <span class="dot-sep-line"></span>
+            <span class="brand-tag">Dermal Infusion</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT / BOOKING CTA SECTION -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="contact-wrapper reveal">
+          <div class="contact-glow-1"></div>
+          <div class="contact-glow-2"></div>
+          
+          <div class="contact-grid">
+            <div class="contact-left">
+              <span class="section-eyebrow">Reserve Your Time</span>
+              <h2 class="contact-title">Your Premium <br/><span class="gradient-text italic">Transformation</span> <br/>Starts Here.</h2>
+              <div class="section-divider left"></div>
+              <p>Skip the queue. Secure a dedicated session with our creative directors. For immediate makeover scheduling, connect with our front desk.</p>
+              
+              <div class="contact-actions">
+                <button class="btn-whatsapp" id="whatsappBtn">
+                  <i class="fa-brands fa-whatsapp"></i>
+                  <span>WhatsApp Booking</span>
+                </button>
+                <a href="#" class="btn-glass-call" id="callBtn">
+                  <i class="fa-solid fa-phone gold"></i>
+                  <span>Call Now</span>
+                </a>
+              </div>
+              
+              <div class="contact-micro">
+                <i class="fa-solid fa-wand-magic-sparkles gold"></i>
+                <span>Instant internal dashboard confirmation</span>
+              </div>
+            </div>
+            
+            <div class="contact-right">
+              <div class="booking-form-card">
+                <h3 class="form-title">Direct Booking Request</h3>
+                <p class="form-sub">Receive priority response within 15 minutes</p>
+                
+                <form id="bookingForm" class="booking-form">
+                  <div>
+                    <label>Your Full Name *</label>
+                    <input type="text" name="name" required placeholder="e.g. Ananya Singh" />
+                  </div>
+                  <div>
+                    <label>Mobile Number *</label>
+                    <input type="tel" name="phone" required placeholder="+91 XXXXX XXXXX" />
+                  </div>
+                  <div>
+                    <label>Select Premium Service</label>
+                    <select name="service" id="serviceSelect">
+                      <!-- Services injected by JS -->
+                    </select>
+                  </div>
+                  <div class="form-row">
+                    <div>
+                      <label>Preferred Date</label>
+                      <input type="date" name="date" />
+                    </div>
+                    <div>
+                      <label>Time Slot</label>
+                      <select name="time">
+                        <option value="Morning (9AM - 12PM)">Morning (9AM - 12PM)</option>
+                        <option value="Afternoon (12PM - 4PM)">Afternoon (12PM - 4PM)</option>
+                        <option value="Evening (4PM - 9PM)">Evening (4PM - 9PM)</option>
+                      </select>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn-primary form-submit">Request Priority Slot</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="#home" class="logo">
+            <div class="logo-title">
+              <span>XXXX</span>
+            </div>
+            <span class="logo-sub">Unisex Salon • Premium</span>
+          </a>
+          <p class="footer-text">The quintessential beauty and grooming benchmark. Offering masterfully executed international aesthetics, elite bridal art, and dermatologically tailored well-being.</p>
+          <div class="social-row">
+            <a href="#" class="social-btn" data-social="Instagram" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#" class="social-btn" data-social="WhatsApp" aria-label="WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <a href="#" class="social-btn" data-social="Call" aria-label="Call">
+              <i class="fa-solid fa-phone"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Salon Location & Hours</h4>
+          <div class="info-line">
+            <i class="fa-solid fa-location-dot gold"></i>
+            <div>
+              <strong>XXXX Unisex Salon</strong><br/>
+              XXXXX, XXXXX <br/>
+              XXXXX, XXXXX <br/>
+              Premium District
+            </div>
+          </div>
+          <div class="info-line">
+            <i class="fa-solid fa-phone gold"></i>
+            <a href="#" data-social="Call" class="info-link">+91 XXXXX XXXXX</a>
+          </div>
+          <div class="info-line">
+            <i class="fa-regular fa-clock gold"></i>
+            <div>
+              <strong>Open Daily (7 Days a Week)</strong><br/>
+              9:00 AM – 9:00 PM
+            </div>
+          </div>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Interactive Hub</h4>
+          <div class="map-placeholder">
+            <div class="map-dots"></div>
+            <div class="map-pin-circle">
+              <i class="fa-solid fa-location-dot gold"></i>
+            </div>
+            <strong>XXXX Location Overview</strong>
+            <p>Centrally located in the premium commercial district.</p>
+            <div class="map-badge">Map Simulated</div>
+          </div>
+          <span class="map-foot">Ample private valet parking available for all clients</span>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div class="footer-copy">
+          © <span id="currentYear"></span> <strong>XXXX Unisex Salon</strong>. All Rights Reserved. <br class="mobile-only"/>
+          Designed for World-Class Aesthetic Perfection.
+        </div>
+        <div class="footer-links">
+          <a href="#services" class="footer-link">Services</a>
+          <a href="#about" class="footer-link">Philosophy</a>
+          <a href="#gallery" class="footer-link">Portfolio</a>
+          <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+            <i class="fa-solid fa-arrow-up"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Booking Feed + WhatsApp -->
+  <div class="floating-container">
+    <div class="floating-alert" id="floatingAlert">
+      <div class="floating-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+      <div class="floating-text">
+        <div class="floating-name"><span id="alertName">Priya S.</span> booked</div>
+        <div class="floating-service" id="alertService">Keratin & Smoothening</div>
+        <div class="floating-time">Verified • <span id="alertTime">Just now</span></div>
+      </div>
+      <button class="floating-close" id="floatingClose" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <div class="floating-whatsapp">
+      <span class="ping-ring"></span>
+      <a href="#" id="whatsappFloat" class="whatsapp-btn" aria-label="WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">Chat Simulated</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Booking Modal -->
+  <div class="modal-overlay" id="bookingModal">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-container">
+      <div class="modal-header">
+        <div class="modal-header-left">
+          <div class="modal-icon">
+            <i class="fa-regular fa-calendar gold"></i>
+          </div>
+          <div>
+            <h3>Reserve Premium Session</h3>
+            <span>XXXX • Premium</span>
+          </div>
+        </div>
+        <button class="modal-close" id="modalClose" aria-label="Close">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      
+      <div class="modal-body">
+        <form id="modalForm" class="booking-form">
+          <div>
+            <label>Your Full Name *</label>
+            <input type="text" name="name" required placeholder="e.g. Ananya Singh" />
+          </div>
+          <div>
+            <label>Mobile Number *</label>
+            <input type="tel" name="phone" required placeholder="+91 XXXXX XXXXX" />
+          </div>
+          <div>
+            <label>Selected Service</label>
+            <select name="service" id="modalServiceSelect">
+              <!-- Services injected by JS -->
+            </select>
+          </div>
+          <div class="form-row">
+            <div>
+              <label>Preferred Date</label>
+              <input type="date" name="date" />
+            </div>
+            <div>
+              <label>Time Slot</label>
+              <select name="time">
+                <option value="Morning (9AM - 12PM)">Morning (9AM - 12PM)</option>
+                <option value="Afternoon (12PM - 4PM)">Afternoon (12PM - 4PM)</option>
+                <option value="Evening (4PM - 9PM)">Evening (4PM - 9PM)</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label>Special Requirements / Stylist Preference</label>
+            <textarea name="notes" rows="2" placeholder="Any specific instructions..."></textarea>
+          </div>
+          <button type="submit" class="btn-primary form-submit">Confirm Booking Request</button>
+          <p class="form-foot">🔒 Your details are kept completely private and confidential.</p>
+        </form>
+
+        <div class="modal-success" id="modalSuccess" style="display: none;">
+          <div class="success-icon">
+            <i class="fa-solid fa-circle-check gold"></i>
+          </div>
+          <h4>Priority Session Reserved!</h4>
+          <p>Thank you, <span class="gold" id="successName">there</span>. We have assigned a director to review your slot for <strong id="successService">your service</strong>.</p>
+          <div class="success-divider"></div>
+          <button class="btn-whatsapp" id="successWhatsapp">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>Simulate WhatsApp Request</span>
+          </button>
+          <button class="link-btn" id="successClose">Return to Homepage</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

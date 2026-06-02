@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-heading: 'Syne', sans-serif;
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+
+  --color-gold: #d4af37;
+  --color-gold-light: #f9f1d1;
+  --color-gold-dark: #aa8620;
+  --color-charcoal: #141417;
+  --color-charcoal-light: #1f1f24;
+  --color-luxury-black: #0b0b0d;
+  --color-beige-soft: #e7e0cf;
+}
+
+/* Base custom font mapping */
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-luxury-black);
+  overflow-x: hidden;
+}
+
+/* Ensure sticky navigation never overlaps anchored headings */
+section {
+  scroll-margin-top: 90px;
+}
+
+h1, h2, h3, h4, .font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-serif-luxury {
+  font-family: var(--font-serif);
+}
+
+/* Custom premium scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b0b0d;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #232328;
+  border-radius: 4px;
+  border: 1px solid #33333a;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d4af37;
+}
+
+/* Glassmorphism custom classes */
+.glass-panel {
+  background: rgba(20, 20, 23, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 175, 55, 0.12);
+}
+
+.glass-panel-gold {
+  background: rgba(212, 175, 55, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+.glass-panel-subtle {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Premium glows */
+.gold-glow {
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.15);
+}
+
+.gold-glow-lg {
+  box-shadow: 0 0 50px rgba(212, 175, 55, 0.25);
+}
+
+.hover-gold-glow:hover {
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.22);
+  border-color: rgba(212, 175, 55, 0.4);
+}
+
+/* Text Gradients */
+.text-gradient-gold {
+  background: linear-gradient(135deg, #ffffff 0%, #d4af37 50%, #f9f1d1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-silver {
+  background: linear-gradient(135deg, #ffffff 0%, #a8a8b0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-premium {
+  background: linear-gradient(90deg, #f3e5ab 0%, #d4af37 50%, #aa8620 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Image zoom effect for cards */
+.hover-zoom {
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hover-zoom-container:hover .hover-zoom {
+  transform: scale(1.08);
+}
